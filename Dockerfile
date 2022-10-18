@@ -2,7 +2,7 @@
 
 FROM python:3.9-slim
 
-EXPOSE 8501
+EXPOSE 80
 
 WORKDIR /app
 
@@ -16,4 +16,4 @@ RUN git clone https://github.com/ciphersmaug/powermatch.git .
 
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT ["streamlit", "run", "Upload.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "Upload.py", "--server.port=80", "--server.address=0.0.0.0"]
