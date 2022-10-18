@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.12/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "latitude": 52.19250868894577,
+    "longitude": 11.824313337607293,
+    "pitch": 20,
+    "zoom": 6
+  },
+  "layers": [
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "lat": 50.57405270883231,
+          "lon": 10.990555302991869,
+          "name": "Altenfeld"
+        },
+        {
+          "lat": 54.10086718918505,
+          "lon": 12.21673689147934,
+          "name": "Bentwisch"
+        },
+        {
+          "lat": 50.991184489733776,
+          "lon": 13.84036959882559,
+          "name": "Dresden-Sued"
+        },
+        {
+          "lat": 53.51683586463968,
+          "lon": 9.914146108137174,
+          "name": "Hamburg-Sued"
+        },
+        {
+          "lat": 52.53162900329271,
+          "lon": 13.24896292449017,
+          "name": "Reuter"
+        },
+        {
+          "lat": 51.44048287799108,
+          "lon": 10.735109199719613,
+          "name": "Wolkramshausen"
+        }
+      ],
+      "filled": true,
+      "getFillColor": [
+        255,
+        0,
+        0
+      ],
+      "getLineColor": [
+        0,
+        0,
+        0
+      ],
+      "getPosition": "@@=[lon, lat]",
+      "id": "3d6ce41e-270d-4284-94e5-60f7f4f0967d",
+      "lineWidthMinPixels": 1,
+      "opacity": 0.8,
+      "pickable": true,
+      "radiusMaxPixels": 15,
+      "radiusMinPixels": 10,
+      "radiusScale": 6,
+      "stroked": true
+    },
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "lat": 52.71332183993811,
+          "lon": 15.806172566070796,
+          "name": "Poland (PL)"
+        },
+        {
+          "lat": 52.027324709934,
+          "lon": 5.458677338176447,
+          "name": "Netherlands (NL)"
+        },
+        {
+          "lat": 47.79039380145816,
+          "lon": 13.545924261975069,
+          "name": "Austria (AT)"
+        },
+        {
+          "lat": 50.13163060776545,
+          "lon": 13.572054300429349,
+          "name": "Czech Republic (CZ)"
+        },
+        {
+          "lat": 48.31438678912545,
+          "lon": 5.223506904331041,
+          "name": "France (FR)"
+        }
+      ],
+      "filled": true,
+      "getFillColor": [
+        0,
+        255,
+        0
+      ],
+      "getLineColor": [
+        0,
+        0,
+        0
+      ],
+      "getPosition": "@@=[lon, lat]",
+      "id": "1e56c626-c213-4d0e-a299-23b36099b721",
+      "lineWidthMinPixels": 1,
+      "opacity": 0.8,
+      "pickable": true,
+      "radiusMaxPixels": 15,
+      "radiusMinPixels": 15,
+      "radiusScale": 6,
+      "stroked": true
+    },
+    {
+      "@@type": "PathLayer",
+      "data": [
+        {
+          "path": [
+            [
+              13.545924261975069,
+              47.79039380145816
+            ],
+            [
+              10.990555302991867,
+              50.57405270883231
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              5.223506904331041,
+              48.31438678912545
+            ],
+            [
+              10.990555302991867,
+              50.57405270883231
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              5.458677338176447,
+              52.027324709934
+            ],
+            [
+              9.914146108137174,
+              53.516835864639674
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              15.806172566070797,
+              52.71332183993811
+            ],
+            [
+              13.24896292449017,
+              52.53162900329271
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              13.572054300429349,
+              50.13163060776545
+            ],
+            [
+              13.84036959882559,
+              50.991184489733776
+            ]
+          ]
+        }
+      ],
+      "getColor": [
+        255,
+        100,
+        100,
+        100
+      ],
+      "getPath": "@@=path",
+      "getWidth": 5,
+      "id": "b4a7c2aa-566b-48f4-8b21-7c5addd77c23",
+      "pickable": true,
+      "widthMinPixels": 10,
+      "widthScale": 20
+    },
+    {
+      "@@type": "PathLayer",
+      "data": [
+        {
+          "path": [
+            [
+              13.24896292449017,
+              52.53162900329271
+            ],
+            [
+              12.21673689147934,
+              54.10086718918505
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              12.21673689147934,
+              54.10086718918505
+            ],
+            [
+              9.914146108137174,
+              53.516835864639674
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              9.914146108137174,
+              53.516835864639674
+            ],
+            [
+              10.735109199719613,
+              51.44048287799108
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              10.735109199719613,
+              51.44048287799108
+            ],
+            [
+              10.990555302991867,
+              50.57405270883231
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              10.990555302991867,
+              50.57405270883231
+            ],
+            [
+              13.84036959882559,
+              50.991184489733776
+            ]
+          ]
+        },
+        {
+          "path": [
+            [
+              13.84036959882559,
+              50.991184489733776
+            ],
+            [
+              13.24896292449017,
+              52.53162900329271
+            ]
+          ]
+        }
+      ],
+      "getColor": [
+        255,
+        100,
+        100,
+        100
+      ],
+      "getPath": "@@=path",
+      "getWidth": 5,
+      "id": "8722cc81-4104-436e-b88b-77158265087f",
+      "pickable": true,
+      "widthMinPixels": 10,
+      "widthScale": 20
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "mapboxKey": "",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = true;
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>
