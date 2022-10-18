@@ -43,7 +43,7 @@ st.write("# Welcome to PowerMatch ⚡")
 with st.sidebar:
   st.image('assets/tinder.png', width=60)
 
-prev = st.radio("Enable Preview", ["Yes", "No"], horizontal=True, index=1)
+prev = st.radio("Enable Preview", ["Yes", "No"], horizontal=True, index=0)
 cl_mapping = {"Data Center":"C01", "Chemical Plant":"C04", "Retail":"C07", "other":"Client"}
 client = st.radio("Tell Us Who You Are:", ["Data Center", "Chemical Plant", "Retail", "other"],horizontal=True, index=3)
 if client != "other":

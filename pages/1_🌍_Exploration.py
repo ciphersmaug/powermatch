@@ -163,13 +163,13 @@ def show_map():
         )
         
     ],
-    tooltip={
-   "html": "<b>Select Substation in Dropdown</b>",
-   "style": {
-        "backgroundColor": "steelblue",
-        "color": "white"
-   }
-}
+#     tooltip={
+#    "html": "<b>Select Substation in Dropdown</b>",
+#    "style": {
+#         "backgroundColor": "steelblue",
+#         "color": "white"
+#    }
+# }
     ))
 
 abbr = {'Altenfeld': 'af', 'Bentwisch':'bt', 'Dresden-Sued':'dr', 'Hamburg-Sued':'hh', 'Reuter':'rt', 'Wolkramshausen':'wk'}
@@ -214,7 +214,7 @@ with tab1:
     st.line_chart(data=data.sample(frac=0.1),x="date_utc", y=["value"], width=0, height=0, use_container_width=True)
 
 with tab2:
-    st.header("Traffic Light")
+    st.header("Indicator Scores")
     prio_dict = {}
     th1 = 0.8
     th2 = 0.4
